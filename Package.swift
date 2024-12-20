@@ -5,17 +5,16 @@ import PackageDescription
 
 let package = Package(
     name: "KMMPackage",
+    platforms: [
+         .iOS(.v14),
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "KMMPackage",
-            targets: ["KMMPackage"]),
+        .library(name: "Shared", targets: ["Shared"])
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "KMMPackage"),
-
+        .binaryTarget(
+            name: "Shared",
+            url: "https://github.com/cac-michael/KMMPackage/releases/download/Framework/Shared.xcframework.zip",
+            checksum:"5a8eb0b050e7b32cd6a8046d0037e56d82b189c154a85ef760205f7ebc7c4144")
     ]
 )
