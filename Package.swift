@@ -9,7 +9,7 @@ let package = Package(
          .iOS(.v14),
     ],
     products: [
-        .library(name: "Shared", targets: ["Shared"])
+        .library(name: "TestPackage", targets: ["Shared"])
     ],
     targets: [
         .binaryTarget(
